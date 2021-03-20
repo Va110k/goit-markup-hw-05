@@ -99,6 +99,7 @@ img {
 
   opacity: 0;
 
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 
@@ -245,6 +246,28 @@ img {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+/* button */
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  padding: 10px 32px;
+  border: 1px solid transparent;
+
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  cursor: pointer;
 }
 
 /* features */
@@ -430,28 +453,6 @@ img {
   background-color: var(--accent-color);
 }
 
-/* button */
-
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
-  padding: 10px 32px;
-  border: 1px solid transparent;
-
-  color: var(--primary-background-color);
-  background-color: var(--accent-color);
-
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1.87;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.06em;
-
-  cursor: pointer;
-}
-
 /* клиенты */
 
 .clients-list {
@@ -500,6 +501,8 @@ img {
 
 .project-image {
   position: relative;
+
+  overflow: hidden;
 }
 
 .project-text {
@@ -526,7 +529,7 @@ img {
   opacity: 1;
 }
 
-.projects-list .project-image::before {
+.project-image::before {
   position: absolute;
 
   display: inline-block;
@@ -538,12 +541,22 @@ img {
 
   background: rgba(33, 150, 243, 0.9);
 
-  opacity: 0;
+  /* opacity: 0; */
+
+  transform: translateY(100%);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
-.projects-list .item:hover ::before,
-.projects-list .item:focus ::before {
+.projects-list .item:hover::before,
+.projects-list .item:focus::before {
   opacity: 1;
+}
+
+.projects-list .item:hover .project-image::before {
+  transform: translateY(0);
 }
 
 .filter-list {
