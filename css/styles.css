@@ -14,6 +14,7 @@
   --primary-background-color: #ffffff;
   --secondary-background-color: #f5f4fa;
   --header-footer-background-color: #2f303a;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -78,6 +79,36 @@ img {
 
 /* nav */
 
+.item .link {
+  position: relative;
+}
+
+.item .link.current::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+
+  opacity: 0;
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+
+  bottom: -1px;
+}
+
+.item .link.current::after {
+  opacity: 1;
+}
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -129,7 +160,7 @@ img {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .header-item {
@@ -140,6 +171,23 @@ img {
 
 .contacts-link:hover,
 .contacts-link:focus {
+  color: var(--accent-color);
+}
+
+/* Фокус */
+
+.link {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+}
+
+.site-nav .link.current {
   color: var(--accent-color);
 }
 
@@ -358,7 +406,7 @@ img {
 
   transition-property: fill, background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .team .icon-list {
@@ -371,7 +419,7 @@ img {
 
   transition-property: fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .icon-link:focus .icons-group,
@@ -380,23 +428,6 @@ img {
 .icon-link:hover .team-icons {
   fill: var(--primary-background-color);
   background-color: var(--accent-color);
-}
-
-/* Фокус */
-
-.link {
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover,
-.link:focus {
-  color: var(--accent-color);
-}
-
-.site-nav .link.current {
-  color: var(--accent-color);
 }
 
 /* button */
@@ -434,7 +465,7 @@ img {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .clients-group {
@@ -449,7 +480,7 @@ img {
 
   transition-property: border;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .client-link:hover,
@@ -542,7 +573,7 @@ img {
 
   transition-property: color, background-color, box-shadow, border-radius;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .button-secondary:hover,
@@ -568,7 +599,7 @@ img {
 
   transition-property: box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .projects-list .item:hover,
