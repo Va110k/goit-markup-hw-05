@@ -443,8 +443,6 @@ icon-link:focus .team-icons,
 
 .project-image {
   position: relative;
-
-
 }
 
 .project-text {
@@ -577,6 +575,21 @@ icon-link:focus .team-icons,
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
 }
+
+/* backdrop */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1600px;
+  height: 1024px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: tomato;
+}
+
+
+
 
 /* footer */
 
