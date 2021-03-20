@@ -126,6 +126,10 @@ img {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-item {
@@ -351,6 +355,10 @@ img {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team .icon-list {
@@ -360,17 +368,27 @@ img {
 
 .team-icons {
   fill: var(--secondary-text-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-link:focus .icons-group,
 .icon-link:hover .icons-group,
-icon-link:focus .team-icons,
+.icon-link:focus .team-icons,
 .icon-link:hover .team-icons {
   fill: var(--primary-background-color);
   background-color: var(--accent-color);
 }
 
 /* Фокус */
+
+.link {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .link:hover,
 .link:focus {
@@ -413,6 +431,10 @@ icon-link:focus .team-icons,
 
 .client-link {
   color: #afb1b8;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-group {
@@ -424,6 +446,10 @@ icon-link:focus .team-icons,
   align-items: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -464,7 +490,8 @@ icon-link:focus .team-icons,
   z-index: 2;
 }
 
-.projects-list .item:hover .project-text {
+.projects-list .item:hover .project-text,
+.projects-list .item:focus .project-text {
   opacity: 1;
 }
 
@@ -483,7 +510,8 @@ icon-link:focus .team-icons,
   opacity: 0;
 }
 
-.projects-list .item:hover ::before {
+.projects-list .item:hover ::before,
+.projects-list .item:focus ::before {
   opacity: 1;
 }
 
@@ -511,6 +539,10 @@ icon-link:focus .team-icons,
   line-height: 1.62;
 
   cursor: pointer;
+
+  transition-property: color, background-color, box-shadow, border-radius;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-secondary:hover,
@@ -533,6 +565,10 @@ icon-link:focus .team-icons,
   /* width: calc((100% - 90px) / 3); */
   margin-right: 30px;
   margin-bottom: 30px;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects-list .item:hover,
