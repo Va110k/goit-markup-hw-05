@@ -665,6 +665,12 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -672,12 +678,13 @@ img {
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2) rotate(360deg);
+}
+
 .modal {
   min-width: 528px;
   min-height: 581px;
-  left: 536px;
-  top: 221px;
-  padding: 8px;
 
   background: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -687,7 +694,34 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.button-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.button-modal-icon {
+  fill: #000000;
 }
 
 /* footer */
