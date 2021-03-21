@@ -520,7 +520,7 @@ img {
   transform: translateY(100%);
 
   transition-property: transform;
-  transition-duration: 1000ms;
+  transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
 
